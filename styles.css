@@ -227,13 +227,22 @@ h1 {
     box-shadow: 0 0 20px #87ceeb;
 }
 
-.portfolio-item img, .cert-item img {
-    width: 100px; /* Reduced size */
-    height: 100px; /* Reduced size */
-    object-fit: cover; /* Maintain aspect ratio */
+.portfolio-item img {
+    width: 50%; 
+    height: 150px; 
+    object-fit: cover; 
     border-radius: 8px;
     filter: brightness(0.9);
-    margin-bottom: 1rem; /* Space below image */
+    margin-bottom: 1rem; 
+}
+
+.cert-item img {
+    width: 100px; 
+    height: 100px; 
+    object-fit: cover; 
+    border-radius: 8px;
+    filter: brightness(0.9);
+    margin-bottom: 1rem; 
 }
 
 .experience-item img {
@@ -404,8 +413,8 @@ footer {
     }
 
     .cert-item img {
-        width: 100px; /* Smaller size on mobile */
-        height: 100px; /* Smaller size on mobile */
+        width: 100px; 
+        height: 100px; 
     }
 
     .moon {
@@ -416,29 +425,29 @@ footer {
     }
     
 }
-/* Icon Container */
+
 .icon-container {
     display: flex;
     justify-content: space-around;
     margin-top: 50px;
-    flex-wrap: wrap; /* Ensure icons wrap on smaller screens */
+    flex-wrap: wrap; 
 }
 
-/* Icon Styling */
+
 .icon-container i {
-    font-size: 50px; /* Default size for larger screens */
+    font-size: 50px; 
     margin: 10px;
     transition: all 0.3s ease;
 }
 
-/* Mobile Responsiveness for Icons */
+
 @media (max-width: 768px) {
     .icon-container {
-        justify-content: center; /* Center icons on smaller screens */
+        justify-content: center; 
     }
 
     .icon-container i {
-        font-size: 30px; /* Smaller icons on mobile */
+        font-size: 30px;
         margin: 8px;
     }
 }
