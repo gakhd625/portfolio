@@ -411,6 +411,10 @@ footer {
     .experience-item img {
         height: 120px;
     }
+    .portfolio-item img {
+        width: 70%;
+    }
+  
 
     .cert-item img {
         width: 100px; 
