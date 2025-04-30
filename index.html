@@ -1,40 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A futuristic portfolio showcasing skills, projects, and certifications.">
-    <meta name="keywords" content="portfolio, web development, certifications, AWS, Oracle, futuristic">
-    <meta name="author" content="Your Name">
-    <title>Portfolio</title>
+    <meta name="description" content="A futuristic portfolio showcasing skills, projects, and certifications with a cosmic aesthetic.">
+    <meta name="keywords" content="portfolio, web development, certifications, AWS, Oracle, futuristic, cosmic">
+    <meta name="author" content="Gerlie Ann Katherine Daga-as">
+    <title>Gerlie's Cosmic Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicons/css/devicons.min.css">
-    
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-          
-    
 </head>
 <body>
     <!-- Background Elements -->
     <div class="space-bg">
+        <div class="nebula"></div>
         <div class="moon"></div>
         <div class="shooting-star star-1"></div>
         <div class="shooting-star star-2"></div>
         <div class="shooting-star star-3"></div>
+        <div class="shooting-star star-4"></div>
+        <div class="star" style="top: 10%; left: 20%;"></div>
+        <div class="star" style="top: 30%; left: 50%;"></div>
+        <div class="star" style="top: 70%; left: 80%;"></div>
+        <div class="star" style="top: 50%; left: 10%;"></div>
+    </div>
+
+    <!-- Constellation Overlay -->
+    <div class="constellation-overlay">
+        <div class="constellation" data-message="Explore my projects!">
+            <div class="constellation-star" style="top: 15%; left: 25%;"></div>
+            <div class="constellation-star" style="top: 20%; left: 30%;"></div>
+            <div class="constellation-star" style="top: 25%; left: 27%;"></div>
+            <div class="constellation-line"></div>
+        </div>
     </div>
 
     <!-- Header -->
     <header>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#portfolio">Projects</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#experience">Highlights</a></li>
-                <li><a href="#contact">Contact</a></li>
+        <nav class="navbar" aria-label="Main navigation">
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="#about" role="menuitem" aria-label="About Me section">About Me</a></li>
+                <li role="none"><a href="#portfolio" role="menuitem" aria-label="Projects section">Projects</a></li>
+                <li role="none"><a href="#certifications" role="menuitem" aria-label="Certifications section">Certifications</a></li>
+                <li role="none"><a href="#experience" role="menuitem" aria-label="Experience and Highlights section">Highlights</a></li>
+                <li role="none"><a href="#contact" role="menuitem" aria-label="Contact section">Contact</a></li>
             </ul>
-            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <div class="menu-orb" aria-label="Open menu" role="button" tabindex="0">
+                <div class="orb-core"></div>
+            </div>
+            <div class="tile-menu">
+                <div class="tile-menu-back" aria-label="Close menu" role="button" tabindex="0">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="tile-menu-items">
+                    <a href="#about" class="tile-menu-item" data-tilt aria-label="About Me section">About Me</a>
+                    <a href="#portfolio" class="tile-menu-item" data-tilt aria-label="Projects section">Projects</a>
+                    <a href="#certifications" class="tile-menu-item" data-tilt aria-label="Certifications section">Certifications</a>
+                    <a href="#experience" class="tile-menu-item" data-tilt aria-label="Experience and Highlights section">Highlights</a>
+                    <a href="#contact" class="tile-menu-item" data-tilt aria-label="Contact section">Contact</a>
+                </div>
+            </div>
+            <button class="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle dark/light mode">
+                <i class="fas fa-moon"></i>
+            </button>
         </nav>
     </header>
 
@@ -42,50 +72,50 @@
     <section id="about" class="section scroll-section">
         <div class="about-content">
             <div class="avatar-container">
-                <img src="https://api.dicebear.com/9.x/notionists/svg?backgroundType=gradientLinear,solid" alt="Avatar" class="avatar">
+                <img src="https://api.dicebear.com/9.x/notionists/svg?backgroundType=gradientLinear,solid" alt="Avatar" class="avatar" loading="lazy">
             </div>
             <div class="about-text">
                 <h2 class="animate-glow">I’m Gerlie Ann Katherine Daga-as</h2>
-                <p>Software Developer</p><br>
-                <p>I craft digital experiences with a futuristic edge. From responsive web apps to cloud-powered solutions, I thrive on pushing boundaries and blending creativity with tech.</p>
-                <!-- <p><strong>Tech Stack:</strong> <span class="skill">HTML</span> <span class="skill">CSS</span> <span class="skill">JS</span> <span class="skill">AWS</span> <span class="skill">Oracle</span></p> -->
-                <div class="social-links-about">
-                    <a href="https://github.com/gakhd625" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/gerlie-ann-katherine-daga-as-326554305" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://twitter.com/yourusername" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <p class="reveal">Software Developer</p>
+                <p class="reveal">I craft digital experiences with a futuristic edge. From responsive web apps to cloud-powered solutions, I thrive on pushing boundaries and blending creativity with tech.</p>
+                <div class="social-links-about reveal">
+                    <a href="https://github.com/gakhd625" target="_blank" class="social-icon" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/gerlie-ann-katherine-daga-as-326554305" target="_blank" class="social-icon" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/yourusername" target="_blank" class="social-icon" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
                 </div>
+                <a href="path-to-resume.pdf" download class="resume-btn reveal" aria-label="Download Resume">Resume</a>
             </div>
         </div>
     </section>
 
-<!-- Tech Stack Section -->
-<h1 class="portfolio-grid">Tech Stack</h1>
-<div class="icon-container">
-    
-    <div class="icon-container-item"><i class="devicon-html5-plain colored"></i></div>
-    <div class="icon-container-item"><i class="devicon-css3-plain colored"></i></div>
-    <div><i class="devicon-javascript-plain colored"></i></div>
-    <div><i class="devicon-java-plain colored"></i></div>
-    <div><i class="devicon-python-plain "></i></div>
-    <div><i class="devicon-amazonwebservices-plain-wordmark colored"></i></div>
-    <div><i class="devicon-mysql-original colored"></i></div>
-    <div><i class="devicon-php-plain colored"></i></div>
-    <div><i class="devicon-laravel-original colored"></i></div>
-</div>
+    <!-- Tech Stack Section -->
+    <section id="tech-stack" class="section scroll-section">
+        <h1 class="animate-header">Tech Stack</h1>
+        <div class="icon-container">
+            <div class="icon-container-item" data-tilt><i class="devicon-html5-plain colored"></i></div>
+            <div class="icon-container-item" data-tilt><i class="devicon-css3-plain colored"></i></div>
+            <div class="icon-container-item" data-tilt><i class="devicon-javascript-plain colored"></i></div>
+            <div class="icon-container-item" data-tilt><i class="devicon-java-plain colored"></i></div>
+            <div class="icon-container-item" data-tilt><i class="devicon-python-plain"></i></div>
+            <div class="icon-container-item" data-tilt><i class="devicon-amazonwebservices-plain-wordmark colored"></i></div>
+            <div class="icon-container-item" data-tilt><i class="devicon-mysql-original colored"></i></div>
+            <div class="icon-container-item" data-tilt><i class="devicon-php-plain colored"></i></div>
+            <div class="icon-container-item" data-tilt><i class="devicon-laravel-original colored"></i></div>
+        </div>
+    </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="section scroll-section">
-        <h1>Projects</h1>
+        <h1 class="animate-header">Projects</h1>
         <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="saapp.png" alt="saapp">
+            <div class="portfolio-item" data-tilt>
+                <img src="saapp.png" alt="SaApp Project" loading="lazy">
                 <h3>SaApp</h3>
-                <p>SaAPP (Sustainable Agriculture App for Farmers) is a web platform that empowers Filipino farmers by providing tech-driven solutions to improve agricultural practices and overcome industry challenges
-                </p>
+                <p>SaAPP (Sustainable Agriculture App for Farmers) is a web platform that empowers Filipino farmers by providing tech-driven solutions to improve agricultural practices and overcome industry challenges.</p>
                 <a href="#" target="_blank">Live Demo</a> | <a href="#" target="_blank">GitHub</a>
             </div>
-            <div class="portfolio-item">
-                <img src="PNPH.png" alt="Project 2">
+            <div class="portfolio-item" data-tilt>
+                <img src="PNPH.png" alt="PN Counterpart Management System" loading="lazy">
                 <h3>PN Counterpart Management System</h3>
                 <p>A web-based payment system for efficient management of counterpart payment.</p>
                 <a href="#" target="_blank">Live Demo</a> | <a href="#" target="_blank">GitHub</a>
@@ -95,16 +125,16 @@
 
     <!-- Certifications Section -->
     <section id="certifications" class="section scroll-section">
-        <h1>My Certifications</h1>
+        <h1 class="animate-header">My Certifications</h1>
         <div class="certifications-grid">
-            <div class="cert-item" title="AWS Certified Cloud Practitioner">
-                <img src="aws.png" alt="AWS Certification">
+            <div class="cert-item" data-tilt title="AWS Certified Cloud Practitioner">
+                <img src="aws.png" alt="AWS Certification" loading="lazy">
                 <h3>AWS Certified Cloud Practitioner</h3>
                 <p>Issued by AWS, January 2025</p>
                 <a href="https://www.credly.com/badges/25058310-b13f-4d98-9fb3-587c4689c5f5/public_url" target="_blank">Verify</a>
             </div>
-            <div class="cert-item" title="Oracle Cloud Infrastructure 2024 Generative AI Certified Professional">
-                <img src="oracle.png" alt="Oracle Certification">
+            <div class="cert-item" data-tilt title="Oracle Cloud Infrastructure 2024 Generative AI Certified Professional">
+                <img src="oracle.png" alt="Oracle Certification" loading="lazy">
                 <h3>Oracle Cloud Infrastructure 2024 Generative AI Certified Professional</h3>
                 <p>Issued by Oracle, July 2024</p>
                 <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=6514B266B0A3DD38758062EDAB0DAE022EB7BA1EF298B825FB220C2B690B0B2B" target="_blank">Verify</a>
@@ -114,37 +144,50 @@
 
     <!-- Experience & Highlights Section -->
     <section id="experience" class="section scroll-section">
-        <h1>Experience & Highlights</h1>
+        <h1 class="animate-header">Experience & Highlights</h1>
         <div class="experience-grid">
-            <div class="experience-item">
-                <img src="awsclub.jpg" alt="Bootcamp Photo">
+            <div class="experience-item" data-tilt>
+                <img src="awsclub.jpg" alt="AWS Cloud Certification Bootcamp" loading="lazy">
                 <h3>AWS Cloud Certification Bootcamp</h3>
-                <p>Completed a 1 month intensive bootcamp on AWS Cloud Club Philippines, 2024.</p>
+                <p>Completed a 1-month intensive bootcamp on AWS Cloud Club Philippines, 2024.</p>
             </div>
-            <div class="experience-item">
-                <img src="dost.jpg" alt="DOST Photo">
-                <h3>DOST:Innovation Technology Transfer Summit Visayas 2024</h3>
-                <p>Top 10 Finalist Pitch Quest(Student Category) ,Marco Polo Hotel, December 2024.</p>
+            <div class="experience-item" data-tilt>
+                <img src="dost.jpg" alt="DOST Innovation Summit" loading="lazy">
+                <h3>DOST: Innovation Technology Transfer Summit Visayas 2024</h3>
+                <p>Top 10 Finalist Pitch Quest (Student Category), Marco Polo Hotel, December 2024.</p>
             </div>
-            <div class="experience-item">
-                <img src="hackathon.jpg" alt="Event Photo">
-                <h3>Hackathon Participant "Innovation in Action: Building Concepts of IT Solutions"
-                </h3>
+            <div class="experience-item" data-tilt>
+                <img src="hackathon.jpg" alt="Hackathon Event" loading="lazy">
+                <h3>Hackathon Participant "Innovation in Action"</h3>
                 <p>Participated in a 2-day hackathon hosted by Horizon.</p>
             </div>
         </div>
     </section>
 
-   
+    <!-- Testimonials Section -->
+    <!-- <section id="testimonials" class="section scroll-section">
+        <h1 class="animate-header">Testimonials</h1>
+        <div class="testimonials-grid">
+            <div class="testimonial-item" data-tilt>
+                <p>"Gerlie's work is out of this world! Her creativity and technical skills are a perfect blend."</p>
+                <h4>- Mentor Name</h4>
+            </div>
+            <div class="testimonial-item" data-tilt>
+                <p>"A highly dedicated developer with a knack for innovative solutions."</p>
+                <h4>- Peer Name</h4>
+            </div>
+        </div>
+    </section> -->
 
     <!-- Contact Section -->
     <section id="contact" class="section scroll-section">
-        <h1>Contact Me</h1>
+        <h1 class="animate-header">Contact Me</h1>
         <form id="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
+            <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
+            <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
+            <textarea name="message" placeholder="Your Message" required aria-label="Your Message"></textarea>
             <button type="submit" class="cta-btn animate-glow">Send Message</button>
+            <div class="loading" style="display: none;">Sending...</div>
         </form>
         <div class="contact-details">
             <p>Email: gerlieannkatherine.dagaas@gmail.com</p>
@@ -154,12 +197,13 @@
     <!-- Footer -->
     <footer>
         <div class="social-links">
-            <a href="https://linkedin.com/in/gerlie-ann-katherine-daga-as-326554305" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/gakhd625" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/in/gerlie-ann-katherine-daga-as-326554305" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/gakhd625" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
