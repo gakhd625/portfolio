@@ -37,7 +37,7 @@ const Experience: React.FC = () => {
     },
     {
       title: 'CODERed Hackathon - 2nd Place',
-      description: 'Participated in a 2-day hackathon hosted by Bidlisiw Foundation, developing innovative solutions for real-world problems.',
+      description: '𝐏𝐫𝐨𝐭𝐞𝐤𝐓𝐚𝐥𝐤—an AI-powered guardian system designed to protect children from online grooming, cyberbullying, and emotional abuse in games',
       image: '/images/trop.jpg',
       date: '2024',
       type: 'achievement',

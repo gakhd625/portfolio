@@ -11,6 +11,7 @@ interface Project {
   githubUrl?: string;
   liveUrl?: string;
   category: 'web' | 'mobile' | 'ai' | 'cloud';
+  status?: 'completed' | 'in-progress' | 'upcoming';
 }
 
 const Projects: React.FC = () => {
@@ -30,6 +31,7 @@ const Projects: React.FC = () => {
       githubUrl: '#',
       liveUrl: '#',
       category: 'web',
+      status: 'in-progress',
     },
     {
       title: 'PN Counterpart Management System',
@@ -39,6 +41,17 @@ const Projects: React.FC = () => {
       githubUrl: '#',
       liveUrl: '#',
       category: 'web',
+      status: 'completed',
+    },
+    {
+      title: '𝐏𝐫𝐨𝐭𝐞𝐤𝐓𝐚𝐥𝐤',
+      description: 'An AI-powered API that integrates with gaming platforms to detect and prevent online grooming, cyberbullying, and emotional abuse in real-time. Designed specifically to safeguard children and promote a safer digital play environment.',
+      image: '/images/trop.jpg',
+      technologies: ['Python','Django'],
+      githubUrl: '#',
+      liveUrl: '#',
+      category: 'web',
+      status: 'in-progress',
     },
   ];
 
@@ -150,6 +163,19 @@ const Projects: React.FC = () => {
                       {tech}
                     </span>
                   ))}
+                  {project.status && (
+                    <span
+                      className={`px-3 py-1 text-sm rounded-full ${
+                        project.status === 'completed'
+                          ? 'bg-green-500/10 text-green-500'
+                          : project.status === 'in-progress'
+                          ? 'bg-yellow-500/10 text-yellow-500'
+                          : 'bg-gray-500/10 text-gray-500'
+                      }`}
+                    >
+                      {project.status.charAt(0).toUpperCase() + project.status.slice(1)}
+                    </span>
+                  )}
                 </div>
 
                 <div className="flex gap-4">
