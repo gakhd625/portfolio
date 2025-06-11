@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 250 95% 60%;
+    --secondary: 262 83% 58%;
+    --accent: 316 70% 50%;
+    --neutral: 215 27.9% 16.9%;
+    --base-100: 222.2 84% 4.9%;
+    --base-200: 217.2 32.6% 17.5%;
+    --base-300: 214.3 31.8% 91.4%;
+    --base-content: 210 40% 98%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-base-100 text-base-content antialiased;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative px-4 py-2 text-base-content hover:text-primary transition-colors duration-200;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-200;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .card {
+    @apply bg-base-200 rounded-xl shadow-lg overflow-hidden;
+  }
+
+  .card-hover {
+    @apply transform hover:-translate-y-2 transition-all duration-300;
+  }
+
+  .section-title {
+    @apply text-4xl font-bold mb-12 text-center gradient-text;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+
+  .card {
+    @apply bg-base-200 rounded-xl shadow-lg overflow-hidden;
+  }
+
+  .glass {
+    @apply bg-base-200/50 backdrop-blur-lg border border-base-content/10;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 rounded-lg bg-base-300 border border-base-content/10 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply px-6 py-2 rounded-lg bg-gradient-to-r from-primary via-secondary to-accent text-white font-medium hover:opacity-90 transition-opacity duration-200;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-2 rounded-lg bg-base-300 text-base-content font-medium hover:bg-base-200 transition-colors duration-200;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Space Background */
+.space-bg {
+  @apply fixed inset-0 -z-10 overflow-hidden;
+  background: radial-gradient(circle at center, theme('colors.dark.100') 0%, theme('colors.dark.200') 100%);
+}
+
+.star {
+  @apply absolute w-1 h-1 bg-white rounded-full;
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-base-200;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/50 rounded-full hover:bg-primary/70 transition-colors duration-200;
+}
+
+/* Selection */
+::selection {
+  @apply bg-primary/20 text-primary;
+}
