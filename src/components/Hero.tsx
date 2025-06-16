@@ -36,7 +36,9 @@ const Hero: React.FC = () => {
             className="mb-8"
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-              <span className="gradient-text">Gerlie Ann Katherine Daga-as</span>
+              <span className="gradient-text">
+                Gerlie Ann Katherine Daga-as
+              </span>
             </h1>
             <p className="text-xl sm:text-2xl text-base-content/80 mb-6">
               Software Developer & AI Enthusiast
@@ -50,8 +52,9 @@ const Hero: React.FC = () => {
             className="max-w-2xl mx-auto mb-12"
           >
             <p className="text-lg text-base-content/70">
-              Passionate about cloud computing, artificial intelligence, and cybersecurity.
-              Exploring how technology can solve real-world challenges and create positive change.
+              Passionate about cloud computing, artificial intelligence, and
+              cybersecurity. Exploring how technology can solve real-world
+              challenges and create positive change.
             </p>
           </motion.div>
 
@@ -71,7 +74,7 @@ const Hero: React.FC = () => {
             </Link>
             <Link
               to="contact"
-              className="btn-secondary"
+              className="px-6 py-3 rounded-md text-base font-medium bg-gray-400 text-gray-800 hover:bg-white hover:text-black transition-colors duration-300"
               smooth={true}
               duration={500}
             >

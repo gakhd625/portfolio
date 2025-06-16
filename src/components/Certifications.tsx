@@ -20,20 +20,32 @@ const Certifications: React.FC = () => {
 
   const certifications: Certification[] = [
     {
-      title: 'AWS Certified Cloud Practitioner',
-      issuer: 'Amazon Web Services (AWS)',
-      date: 'January 2025',
-      image: '/images/aws.png',
-      verifyUrl: 'https://www.credly.com/badges/25058310-b13f-4d98-9fb3-587c4689c5f5/public_url',
-      credentialId: 'AWS-CCP-2025',
+      title: "AWS Certified Cloud Practitioner",
+      issuer: "Amazon Web Services (AWS)",
+      date: "January 2025",
+      image: "/images/aws.png",
+      verifyUrl:
+        "https://www.credly.com/badges/25058310-b13f-4d98-9fb3-587c4689c5f5/public_url",
+      credentialId: "AWS-CCP-2025",
     },
     {
-      title: 'Oracle Cloud Infrastructure 2024 Generative AI Certified Professional',
-      issuer: 'Oracle',
-      date: 'July 2024',
-      image: '/images/oracle.png',
-      verifyUrl: 'https://catalog-education.oracle.com/ords/certview/sharebadge?id=6514B266B0A3DD38758062EDAB0DAE022EB7BA1EF298B825FB220C2B690B0B2B',
-      credentialId: 'OCI-GAI-2024',
+      title:
+        "Oracle Cloud Infrastructure 2024 Generative AI Certified Professional",
+      issuer: "Oracle",
+      date: "July 2024",
+      image: "/images/oracle.png",
+      verifyUrl:
+        "https://catalog-education.oracle.com/ords/certview/sharebadge?id=6514B266B0A3DD38758062EDAB0DAE022EB7BA1EF298B825FB220C2B690B0B2B",
+      credentialId: "OCI-GAI-2024",
+    },
+    {
+      title: "Oracle AI Vector Search Certified Professional",
+      issuer: "Oracle",
+      date: "May 2025",
+      image: "/images/oraclevector.png",
+      verifyUrl:
+        "https://catalog-education.oracle.com/ords/certview/sharebadge?id=8427AE99E820F666BB156BD23A32B34212225495D7227E69B0EDDE6CC1934587&fbclid=IwY2xjawKSe41leHRuA2FlbQIxMQABHnwtMVFI3jOrVfYqw3R9LO746NgyvSbUtiqU-6eW8atWvmaFwItJX0N8zWK9_aem_LIkawFXKsFUlvMffk0mYlg",
+      credentialId: "OCI-GAI-2024",
     },
   ];
 
