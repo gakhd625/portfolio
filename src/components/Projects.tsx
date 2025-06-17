@@ -302,7 +302,7 @@ const Projects: React.FC = () => {
             onClick={() => scroll("left")}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 p-3 rounded-full bg-base-100 shadow-lg hover:bg-primary hover:text-white transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-base-100 shadow-lg hover:bg-primary hover:text-white transition-colors"
             aria-label="Scroll left"
           >
             <FaChevronLeft className="w-5 h-5" />
@@ -314,7 +314,7 @@ const Projects: React.FC = () => {
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-6 px-12"
+            className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-6 px-4 sm:px-6 md:px-12" // Changed px-12 to responsive padding
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             onMouseEnter={() => handleCarouselHover(true)}
             onMouseLeave={() => handleCarouselHover(false)}
@@ -422,7 +422,7 @@ const Projects: React.FC = () => {
             onClick={() => scroll("right")}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-10 p-3 rounded-full bg-base-100 shadow-lg hover:bg-primary hover:text-white transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-base-100 shadow-lg hover:bg-primary hover:text-white transition-colors"
             aria-label="Scroll right"
           >
             <FaChevronRight className="w-5 h-5" />

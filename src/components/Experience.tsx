@@ -24,7 +24,7 @@ const Experience: React.FC = () => {
       description:
         "Contributed as a volunteer for GDG Cebu, assisting participants in hands-on workshops",
       image: "/images/gdg.jpg",
-      date: "2024",
+      date: "2025",
       type: "volunteer",
       icon: <FaUsers className="w-6 h-6 text-primary" />,
     },

@@ -155,8 +155,7 @@ const Contact: React.FC = () => {
                     <div>
                       <p className="text-sm text-base-content/60">Location</p>
                       <p className="text-base-content">
-                        Based in the Philippines, available for remote work and
-                        collaboration worldwide.
+                        Based in the Philippines, available for work(nice if remote)
                       </p>
                     </div>
                   </div>
