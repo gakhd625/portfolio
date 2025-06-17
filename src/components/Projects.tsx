@@ -33,27 +33,17 @@ const Projects: React.FC = () => {
 
   const projects: Project[] = [
     {
-      title: "SaApp",
-      description:
-        "SaAPP (Sustainable Agriculture App for Farmers) is a web platform that empowers Filipino farmers by providing tech-driven solutions to improve agricultural practices and overcome industry challenges.",
-      image: "/images/saapp.png",
-      technologies: ["React", "Node.js", "MongoDB", "AWS"],
-      githubUrl: "#",
-      liveUrl: "#",
-      category: "web",
-      status: "in-progress",
-    },
-    {
       title: "PN Counterpart Management System",
       description:
         "A web-based payment system for efficient management of counterpart payment.",
       image: "/images/PNPH.png",
       technologies: ["PHP", "Laravel", "MySQL", "Bootstrap"],
-      githubUrl: "#",
+      githubUrl: "https://github.com/gakhd625/peyen",
       liveUrl: "#",
       category: "web",
       status: "completed",
     },
+
     {
       title: "Safeplay",
       description:
@@ -63,30 +53,53 @@ const Projects: React.FC = () => {
       githubUrl: "#",
       liveUrl: "#",
       category: "web",
-      status: "in-progress",
+      status: "completed",
     },
+    {
+      title: "SaApp",
+      description:
+        "SaAPP (Sustainable Agriculture App for Farmers) is a web platform that empowers Filipino farmers by providing tech-driven solutions to improve agricultural practices and overcome industry challenges.",
+      image: "/images/saapp.png",
+      technologies: ["HTML", "CSS", "JS", "PHP"],
+      githubUrl: "https://github.com/gakhd625/SAAPP-CODE",
+      liveUrl: "#",
+      category: "web",
+      status: "in-progress",
+    },  
     {
       title: "Protektalk",
       description:
-        "An AI-powered guardian system designed to protect children from online grooming, cyberbullying, and emotional abuse in games",
+        "An API AI-powered guardian system designed to protect children from online grooming, cyberbullying, and emotional abuse in games",
       image: "/images/trop.jpg",
-      technologies: ["HTML", "CSS", "JS", "GEMINI API"],
-      githubUrl: "#",
+      technologies: ["HTML", "CSS", "Django", "GEMINI API"],
+      githubUrl: "https://github.com/gakhd625/Protektalk",
       liveUrl: "#",
       category: "web",
       status: "in-progress",
     },
     {
-      title: "Protektalk",
+      title: "Finsync",
       description:
-        "An AI-powered guardian system designed to protect children from online grooming, cyberbullying, and emotional abuse in games",
-      image: "/images/trop.jpg",
-      technologies: ["HTML", "CSS", "JS", "GEMINI API"],
-      githubUrl: "#",
+        "Finsync is a mobile-responsive web app that helps users track their daily expenses and monitor their savings.",
+      image: "/images/finsync.png",
+      technologies: ["HTML", "CSS", "JS"],
+      githubUrl: "https://github.com/gakhd625/Finsync",
       liveUrl: "#",
       category: "web",
-      status: "in-progress",
+      status: "completed",
     },
+    {
+      title: "Snapbooth",
+      description:
+        "Snapbooth is a photo booth web application where users can capture photos using their webcam, customize them with filters and decorations, and download the final image.",
+      image: "/images/snapbooth.png",
+      technologies: ["typescript","HTML", "CSS", "JS"],
+      githubUrl: "https://github.com/gakhd625/snapbooth",
+      liveUrl: "#",
+      category: "web",
+      status: "completed",
+    },
+    
   ];
 
   const categories = [
@@ -107,8 +120,8 @@ const Projects: React.FC = () => {
       const { scrollLeft, clientWidth } = carouselRef.current;
       const scrollTo =
         direction === "left"
-          ? scrollLeft - clientWidth * 0.8
-          : scrollLeft + clientWidth * 0.8;
+          ? scrollLeft - clientWidth * 0.2
+          : scrollLeft + clientWidth * 0.2;
 
       carouselRef.current.scrollTo({
         left: scrollTo,
@@ -355,21 +368,36 @@ const Projects: React.FC = () => {
                         )}
                       </div>
 
-                      {project.status && (
-                        <motion.span
+                      <div className="flex items-center justify-between">
+                        {project.status && (
+                          <motion.span
+                            whileHover={{ scale: 1.05 }}
+                            className={`px-2 py-0.5 text-xs rounded-full ${
+                              project.status === "completed"
+                                ? "bg-green-500/10 text-green-500"
+                                : project.status === "in-progress"
+                                ? "bg-yellow-500/10 text-yellow-500"
+                                : "bg-gray-500/10 text-gray-500"
+                            }`}
+                          >
+                            {project.status.charAt(0).toUpperCase() +
+                              project.status.slice(1)}
+                          </motion.span>
+                        )}
+                        {/* View button */}
+                        <motion.button
                           whileHover={{ scale: 1.05 }}
-                          className={`px-2 py-0.5 text-xs rounded-full ${
-                            project.status === "completed"
-                              ? "bg-green-500/10 text-green-500"
-                              : project.status === "in-progress"
-                              ? "bg-yellow-500/10 text-yellow-500"
-                              : "bg-gray-500/10 text-gray-500"
-                          }`}
+                          whileTap={{ scale: 0.95 }}
+                          className="ml-2 text-xs font-semibold text-primary hover:underline"
+                          onClick={(e) => {
+                            e.stopPropagation(); // Prevent triggering the modal on the whole card
+                            setSelectedProject(project);
+                          }}
                         >
-                          {project.status.charAt(0).toUpperCase() +
-                            project.status.slice(1)}
-                        </motion.span>
-                      )}
+                          View
+                        </motion.button>
+                      </div>
+
                     </div>
                   </div>
                 </motion.div>
@@ -497,7 +525,7 @@ const Projects: React.FC = () => {
                       <span>View Code</span>
                     </motion.a>
                   )}
-                  {selectedProject.liveUrl && (
+                  {/* {selectedProject.liveUrl && (
                     <motion.a
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
@@ -509,7 +537,7 @@ const Projects: React.FC = () => {
                       <FaExternalLinkAlt className="w-3 h-3" />
                       <span>Live Demo</span>
                     </motion.a>
-                  )}
+                  )} */}
                 </motion.div>
               </div>
             </motion.div>

@@ -8,7 +8,7 @@ interface Experience {
   description: string;
   image: string;
   date: string;
-  type: "achievement" | "event" | "project";
+  type: "achievement" | "event" | "project" | "volunteer";
   icon: React.ReactNode;
 }
 
@@ -20,13 +20,13 @@ const Experience: React.FC = () => {
 
   const experiences: Experience[] = [
     {
-      title: "AWS Cloud Certification Bootcamp",
+      title: "Google Developer Group Cebu - Volunteer",
       description:
-        "Completed a 1-month intensive bootcamp on AWS Cloud Club Philippines, focusing on cloud computing fundamentals and AWS services.",
-      image: "/images/awsclub.jpg",
-      date: "2025",
-      type: "achievement",
-      icon: <FaTrophy className="w-6 h-6 text-yellow-500" />,
+        "Contributed as a volunteer for GDG Cebu, assisting participants in hands-on workshops",
+      image: "/images/gdg.jpg",
+      date: "2024",
+      type: "volunteer",
+      icon: <FaUsers className="w-6 h-6 text-primary" />,
     },
     {
       title: "DOST: Innovation Technology Transfer Summit Visayas 2024",
@@ -34,7 +34,7 @@ const Experience: React.FC = () => {
         "Top 10 Finalist in the Pitch Quest (Student Category) at Marco Polo Hotel, showcasing innovative technology solutions.",
       image: "/images/dost.jpg",
       date: "December 2024",
-      type: "event",
+      type: "achievement",
       icon: <FaUsers className="w-6 h-6 text-primary" />,
     },
     {
@@ -46,6 +46,16 @@ const Experience: React.FC = () => {
       type: "achievement",
       icon: <FaCode className="w-6 h-6 text-secondary" />,
     },
+    {
+      title: "AWS Cloud Certification Bootcamp",
+      description:
+        "Completed a 1-month intensive bootcamp on AWS Cloud Club Philippines, focusing on cloud computing fundamentals and AWS services.",
+      image: "/images/awsclub.jpg",
+      date: "2025",
+      type: "achievement",
+      icon: <FaTrophy className="w-6 h-6 text-yellow-500" />,
+    },
+
   ];
 
   const containerVariants = {

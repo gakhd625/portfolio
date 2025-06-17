@@ -51,9 +51,9 @@ const App: React.FC = () => {
         <Hero />
         <About />
         <TechStack />
+        <Certifications />
         <Projects />
         <Experience />
-        <Certifications />
         <Contact />
       </main>
       <Footer />

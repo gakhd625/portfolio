@@ -98,9 +98,9 @@ const Certifications: React.FC = () => {
               className="group relative"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl transform group-hover:scale-105 transition-transform duration-300" />
-              <div className="relative p-6 bg-base-100 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="relative p-4 bg-base-100 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-24 h-24 flex-shrink-0">
+                  <div className="w-16 h-16 flex-shrink-0">
                     <img
                       src={cert.image}
                       alt={cert.issuer}
@@ -119,7 +119,7 @@ const Certifications: React.FC = () => {
                   </motion.a>
                 </div>
 
-                <h3 className="text-xl font-bold mb-2 gradient-text line-clamp-2">
+                <h3 className="text-lg font-bold mb-2 gradient-text line-clamp-2">
                   {cert.title}
                 </h3>
                 <p className="text-base-content/70 mb-2">
