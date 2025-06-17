@@ -23,8 +23,8 @@ const Navbar: React.FC<NavbarProps> = ({ theme }) => {
   const navItems = [
     { name: 'About', to: 'about' },
     { name: 'Tech Stack', to: 'tech-stack' },
-    { name: 'Projects', to: 'projects' },
     { name: 'Certifications', to: 'certifications' },
+    { name: 'Projects', to: 'projects' },
     { name: 'Experience', to: 'experience' },
     { name: 'Contact', to: 'contact' },
   ];

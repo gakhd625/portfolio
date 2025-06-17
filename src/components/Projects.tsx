@@ -71,7 +71,7 @@ const Projects: React.FC = () => {
       description:
         "An API AI-powered guardian system designed to protect children from online grooming, cyberbullying, and emotional abuse in games",
       image: "/images/trop.jpg",
-      technologies: ["Django","HTML", "CSS", "GEMINI API"],
+      technologies: ["Django", "GEMINI API", "HTML", "CSS"],
       githubUrl: "https://github.com/gakhd625/Protektalk",
       liveUrl: "#",
       category: "web",
