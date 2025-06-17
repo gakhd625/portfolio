@@ -1,6 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { FaCode, FaLaptopCode, FaServer } from "react-icons/fa";
 
 const About: React.FC = () => {
   const [ref, inView] = useInView({
@@ -24,130 +25,107 @@ const About: React.FC = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
       },
     },
   };
 
+  const services = [
+    {
+      icon: <FaCode className="w-6 h-6" />,
+      title: "Frontend Development",
+      description:
+        "Creating responsive and interactive user interfaces using modern frameworks and best practices.",
+    },
+    {
+      icon: <FaServer className="w-6 h-6" />,
+      title: "Backend Development",
+      description:
+        "Building robust server-side applications and APIs with scalable architecture.",
+    },
+    {
+      icon: <FaLaptopCode className="w-6 h-6" />,
+      title: "Beyond Tech",
+      description:
+        "In my free time, I volunteer or participate in tech events to expand my network and stay updated in the industry. I also enjoy photography,  network and stay updated in the industry. I also enjoy photography,   .",
+    },
+  ];
+
   return (
-    <section id='about' className="py-20 relative">
+    <section id="about" className="py-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2
+        <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="section-title"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
         >
-          About Me
-        </motion.h2>
+          <h2 className="section-title mb-4">About Me</h2>
+          <p className="text-lg text-base-content/70 max-w-3xl mx-auto">
+            I'm a passionate full-stack developer with a keen eye for creating
+            elegant solutions in the least amount of time. I specialize in
+            building responsive web applications and delivering exceptional user
+            experiences.
+          </p>
+        </motion.div>
 
         <motion.div
-          ref={ref}
           variants={containerVariants}
           initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+          animate={inView ? "visible" : "hidden"}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
-          <motion.div variants={itemVariants} className="space-y-6">
-            <div className="card glass p-6">
-              <h3 className="text-2xl font-bold mb-4 gradient-text">
-                Who I Am
-              </h3>
-              <p className="text-base-content/80 leading-relaxed">
-                Hi, I'm <span className="font-semibold text-primary">Gerlie</span>, 
-                an aspiring IT professional with a strong interest in cloud computing, 
-                artificial intelligence, and cybersecurity. I am passionate about exploring 
-                how technology can solve real-world challenges and create positive change.
-              </p>
-            </div>
-
-            <div className="card glass p-6">
-              <h3 className="text-2xl font-bold mb-4 gradient-text">
-                What I Do
-              </h3>
-              <p className="text-base-content/80 leading-relaxed">
-                I am actively exploring various areas of tech, particularly software 
-                development and cloud infrastructure. I remain open to gaining new skills 
-                and experiences to broaden my knowledge and stay at the forefront of 
-                technological innovation.
-              </p>
-            </div>
-
-            <div className="card glass p-6">
-              <h3 className="text-2xl font-bold mb-4 gradient-text">
-                Beyond Tech
-              </h3>
-              <p className="text-base-content/80 leading-relaxed">
-                In my free time, I volunteer or participate in tech events to expand my 
-                network and stay updated in the industry. I also enjoy photography, 
-                especially capturing nature, as a creative and relaxing hobby.
-              </p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            variants={itemVariants}
-            className="relative"
-          >
-            <div className="card glass p-8 h-full">
-              <div className="space-y-6">
-                {/* <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span className="text-2xl">🎓</span>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold">Education</h4>
-                    <p className="text-base-content/70">Bachelor of Science in Information Technology</p>
-                  </div>
-                </div> */}
-
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center">
-                    <span className="text-2xl">💻</span>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold">Skills</h4>
-                    <p className="text-base-content/70">
-                      Cloud Computing, AI/ML, Web Development, Cybersecurity
-                    </p>
-                  </div>
+          {services.map((service, index) => (
+            <motion.div
+              key={service.title}
+              variants={itemVariants}
+              className="group relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl transform group-hover:scale-105 transition-transform duration-300" />
+              <div className="relative p-6 bg-base-100 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 text-primary">
+                  {service.icon}
                 </div>
-
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
-                    <span className="text-2xl">🎯</span>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold">Goals</h4>
-                    <p className="text-base-content/70">
-                      To become a full-stack developer and contribute to innovative solutions
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span className="text-2xl">📸</span>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold">Hobbies</h4>
-                    <p className="text-base-content/70">
-                      Photography, Tech Events, Volunteering
-                    </p>
-                  </div>
-                </div>
+                <h3 className="text-xl font-bold mb-3 gradient-text">
+                  {service.title}
+                </h3>
+                <p className="text-base-content/70">{service.description}</p>
               </div>
-            </div>
-
-            {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl" />
-            <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-secondary/20 rounded-full blur-2xl" />
-          </motion.div>
+            </motion.div>
+          ))}
         </motion.div>
+
+        {/* Animated decorative elements */}
+        <motion.div
+          className="absolute top-1/4 -right-24 w-48 h-48 bg-primary/20 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 -left-24 w-48 h-48 bg-secondary/20 rounded-full blur-3xl"
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.5, 0.3, 0.5],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
       </div>
     </section>
   );
 };
 
-export default About; 
+export default About;
