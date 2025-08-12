@@ -12,16 +12,24 @@
     --neutral: 215 27.9% 16.9%;
     --base-100: 222.2 84% 4.9%;
     --base-200: 217.2 32.6% 17.5%;
-    --base-300: 214.3 31.8% 91.4%;
+    --base-300: 214.3 31.8% 25.4%; /* Fixed: was too light at 91.4% */
     --base-content: 210 40% 98%;
   }
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevent horizontal scroll */
   }
 
   body {
     @apply bg-base-100 text-base-content antialiased;
+    overflow-x: hidden; /* Prevent horizontal scroll on body too */
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Ensure mobile viewport doesn't overflow */
+  * {
+    box-sizing: border-box;
   }
 }
 
@@ -54,10 +62,6 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
   }
 
-  .card {
-    @apply bg-base-200 rounded-xl shadow-lg overflow-hidden;
-  }
-
   .glass {
     @apply bg-base-200/50 backdrop-blur-lg border border-base-content/10;
   }
@@ -73,6 +77,35 @@
   .btn-secondary {
     @apply px-6 py-2 rounded-lg bg-base-300 text-base-content font-medium hover:bg-base-200 transition-colors duration-200;
   }
+
+  /* Mobile Menu Specific Styles */
+  .mobile-menu {
+    @apply fixed top-16 left-0 right-0 z-40 md:hidden;
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  .mobile-menu-content {
+    @apply bg-base-100 shadow-2xl border border-base-content/10;
+    margin: 0 1rem;
+    border-radius: 0.75rem;
+    max-width: calc(100vw - 2rem);
+  }
+
+  .mobile-menu-item {
+    @apply block w-full px-6 py-4 text-left text-base font-medium text-base-content hover:bg-base-200 hover:text-primary transition-all duration-200 border-b border-base-content/5 last:border-b-0;
+  }
+
+  /* Ensure mobile menu doesn't break layout */
+  @media (max-width: 768px) {
+    .mobile-menu-backdrop {
+      @apply fixed inset-0 bg-black/30 backdrop-blur-sm z-39;
+    }
+    
+    .mobile-menu {
+      z-index: 45;
+    }
+  }
 }
 
 /* Animations */
@@ -83,6 +116,21 @@
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out;
 }
 
 /* Space Background */
@@ -121,4 +169,35 @@
 /* Selection */
 ::selection {
   @apply bg-primary/20 text-primary;
+}
+
+/* Mobile specific fixes */
+@media (max-width: 768px) {
+  /* Prevent horizontal overflow on small screens */
+  .max-w-7xl {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Ensure text doesn't overflow */
+  body {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Fix viewport units on mobile */
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile */
+  }
+}
+
+/* Debug classes - remove after testing */
+.debug-border {
+  border: 2px solid red !important;
+}
+
+.debug-bg {
+  background: rgba(255, 0, 0, 0.2) !important;
 }
