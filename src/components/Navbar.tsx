@@ -22,11 +22,11 @@ const Navbar: React.FC<NavbarProps> = ({ theme }) => {
 
   const navItems = [
     { name: 'About', to: 'about' },
-    { name: 'Tech Stack', to: 'tech-stack' },
+    // { name: 'Tech Stack', to: 'tech-stack' },
     { name: 'Certifications', to: 'certifications' },
     { name: 'Projects', to: 'projects' },
     { name: 'Experience', to: 'experience' },
-    { name: 'Contact', to: 'contact' },
+    // { name: 'Contact', to: 'contact' },
   ];
 
   return (

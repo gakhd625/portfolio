@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import TechStack from './components/TechStack'; 
-import Projects from './components/Projects';        
-import Experience from './components/Experience';
-import Certifications from './components/Certifications';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import React, { useEffect } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import TechStack from "./components/TechStack";
+import Projects from "./components/Projects";
+import Experience from "./components/Experience";
+
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 const App: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -21,15 +21,17 @@ const App: React.FC = () => {
   useEffect(() => {
     // Smooth scroll behavior for anchor links
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener('click', function (e) {
+      anchor.addEventListener("click", function (e) {
         e.preventDefault();
-        const href = (e.currentTarget as HTMLAnchorElement).getAttribute('href');
+        const href = (e.currentTarget as HTMLAnchorElement).getAttribute(
+          "href"
+        );
         if (href) {
           const target = document.querySelector(href);
           if (target) {
             target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start',
+              behavior: "smooth",
+              block: "start",
             });
           }
         }
@@ -51,10 +53,9 @@ const App: React.FC = () => {
         <Hero />
         <About />
         <TechStack />
-        <Certifications />
         <Projects />
         <Experience />
-        <Contact />
+        {/* <Contact /> */}
       </main>
       <Footer />
 

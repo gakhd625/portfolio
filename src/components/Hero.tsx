@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
               </span>
             </h1>
             <p className="text-xl sm:text-2xl text-base-content/80 mb-6">
-              Software Developer & AI Enthusiast
+              Software Enginner | Cybersecurity Analyst
             </p>
           </motion.div>
 
@@ -72,14 +72,14 @@ const Hero: React.FC = () => {
             >
               View My Work
             </Link>
-            <Link
+            {/* <Link
               to="contact"
               className="px-6 py-3 rounded-md text-base font-medium bg-gray-400 text-gray-800 hover:bg-white hover:text-black transition-colors duration-300"
               smooth={true}
               duration={500}
             >
               Get in Touch
-            </Link>
+            </Link> */}
           </motion.div>
 
           <motion.div
