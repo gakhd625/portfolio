@@ -48,7 +48,7 @@ const Experience: React.FC = () => {
     },
     {
       title: "Google Developer Group Cebu - Technical Volunteer",
-      duration: "May 2025",
+      duration: "May 2025- Present",
       company: "Google Developer Group Cebu",
       responsibilities: [
         "Assisted in organizing and facilitating technical workshops and events",

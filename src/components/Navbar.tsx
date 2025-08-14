@@ -45,7 +45,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme }) => {
             smooth={true}
             duration={500}
           >
-            Portfolio
+            gerleyy
           </Link>
 
           {/* Desktop Navigation */}

@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
               <span className="gradient-text">
-                Gerlie Ann Katherine Daga-as
+                Hi, I'm Gerlie 
               </span>
             </h1>
             <p className="text-xl sm:text-2xl text-base-content/80 mb-6">
