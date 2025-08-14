@@ -20,10 +20,10 @@ const Experience: React.FC = () => {
 
   const experiences: Experience[] = [
     {
-      title: "GDG Build with AI",
+      title: "Google IO Extended Cebu 2025",
       description:
         "Contributed as a technical volunteer for GDG Cebu, assisting participants in hands-on workshops, troubleshooting, and providing support during the event.",
-      image: "/images/gdg.jpg",
+      image: "/images/gdgio.jpg",
       date: "2025",
       type: "volunteer",
       icon: <FaUsers className="w-6 h-6 text-primary" />,
@@ -55,6 +55,24 @@ const Experience: React.FC = () => {
       type: "achievement",
       icon: <FaCloud className="w-6 h-6 text-yellow-500" />,
     },
+    {
+      title: "DEVCON Cyberseries: The Cybersecurity Blueprint",
+      description:
+        "Volunteered in a cybersecurity event organized by DEVCON, focusing on the latest trends and best practices in cybersecurity.",
+      image: "/images/devconcyber.jpg",
+      date: "2025",
+      type: "volunteer",
+      icon: <FaUsers className="w-6 h-6 text-primary" />,
+    },
+    {
+      title: "GDG Build with AI",
+      description:
+        "Contributed as a technical volunteer for GDG Cebu, assisting participants in hands-on workshops, troubleshooting, and providing support during the event.",
+      image: "/images/gdg.jpg",
+      date: "2025",
+      type: "volunteer",
+      icon: <FaUsers className="w-6 h-6 text-primary" />,
+    },
     // {
     //   title: "DEVCON Cyberseries: The cybersecurity Blueprint",
     //   description:
@@ -64,8 +82,6 @@ const Experience: React.FC = () => {
     //   type: "achievement",
     //   icon: <FaTrophy className="w-6 h-6 text-yellow-500" />,
     // },
-
-
   ];
 
   const containerVariants = {

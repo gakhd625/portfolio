@@ -48,20 +48,20 @@ const About: React.FC = () => {
     {
       // icon: <FaBrain className="w-5 h-5" />,
       text: "AI & Machine Learning",
-      // color: "from-purple-500 to-pink-500",
+      color: "from-purple-500 to-pink-500",
     },
     {
-      // icon: <FaCloud className="w-5 h-5" />,
+      icon: <FaCloud className="w-5 h-5" />,
       text: "Cloud Technologies",
       // color: "from-blue-500 to-cyan-500",
     },
     {
       // icon: <FaShieldAlt className="w-5 h-5" />,
       text: "Cybersecurity",
-      // color: "from-green-500 to-emerald-500",
+      color: "from-green-500 to-emerald-500",
     },
     {
-      // icon: <FaCode className="w-5 h-5" />,
+      icon: <FaCode className="w-5 h-5" />,
       text: "Full-Stack Development",
       // color: "from-orange-500 to-red-500",
     },

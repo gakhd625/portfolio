@@ -1,29 +1,32 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-scroll';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import React from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-scroll";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Hero: React.FC = () => {
   const socialLinks = [
     {
       icon: <FaGithub className="w-6 h-6" />,
-      href: 'https://github.com/gakhd625',
-      label: 'GitHub Profile',
+      href: "https://github.com/gakhd625",
+      label: "GitHub Profile",
     },
     {
       icon: <FaLinkedin className="w-6 h-6" />,
-      href: 'https://linkedin.com/in/gerlie-ann-katherine-daga-as-326554305',
-      label: 'LinkedIn Profile',
+      href: "https://linkedin.com/in/gerlie-ann-katherine-daga-as-326554305",
+      label: "LinkedIn Profile",
     },
     {
       icon: <FaTwitter className="w-6 h-6" />,
-      href: '#',
-      label: 'Twitter Profile',
+      href: "#",
+      label: "Twitter Profile",
     },
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden py-20">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden py-20"
+    >
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20 animate-gradient-xy" />
 
@@ -36,9 +39,7 @@ const Hero: React.FC = () => {
             className="mb-8"
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-              <span className="gradient-text">
-                Hi, I'm Gerlie 
-              </span>
+              <span className="gradient-text">Hi, I'm Gerlie</span>
             </h1>
             <p className="text-xl sm:text-2xl text-base-content/80 mb-6">
               Software Enginner | Cybersecurity Analyst
@@ -111,4 +112,4 @@ const Hero: React.FC = () => {
   );
 };
 
-export default Hero; 
+export default Hero;

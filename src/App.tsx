@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { motion, useScroll, useSpring } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Blog from "./components/Blog";
 import Hero from "./components/Hero";
@@ -14,13 +13,6 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 const App: React.FC = () => {
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
-
   useEffect(() => {
     // Smooth scroll behavior for anchor links
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -32,9 +24,16 @@ const App: React.FC = () => {
         if (href) {
           const target = document.querySelector(href);
           if (target) {
-            target.scrollIntoView({
+            // Calculate position with navbar offset
+            const navbarHeight = 64; // Height of navbar (h-16 = 64px)
+            const targetPosition =
+              target.getBoundingClientRect().top +
+              window.pageYOffset -
+              navbarHeight;
+
+            window.scrollTo({
+              top: targetPosition,
               behavior: "smooth",
-              block: "start",
             });
           }
         }
@@ -45,27 +44,24 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className="min-h-screen bg-base-100 text-base-content">
-        {/* Progress bar */}
-        <motion.div
-          className="fixed top-0 left-0 right-0 h-1 bg-primary z-50 origin-left"
-          style={{ scaleX }}
-        />
-
         {/* Main content */}
         <Navbar theme="light" />
         <Routes>
-          <Route path="/" element={
-            <>
-              <Hero />
-              <About />
-              <TechStack />
-              <Projects />
-              <Experience />
-              {/* <Contact /> */}
-            </>
-          } />
-          <Route path="/blog" element={<Blog />} />
-          <Route path ="/highlights" element={<Highlights />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <About />
+                <TechStack />
+                <Projects />
+                <Experience />
+                {/* <Contact /> */}
+              </>
+            }
+          />
+          {/* <Route path="/blog" element={<Blog />} /> */}
+          <Route path="/highlights" element={<Highlights />} />
         </Routes>
         <Footer />
 
