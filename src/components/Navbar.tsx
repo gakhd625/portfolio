@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-scroll';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 interface NavbarProps {
@@ -8,6 +10,8 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ theme }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -21,12 +25,14 @@ const Navbar: React.FC<NavbarProps> = ({ theme }) => {
   }, []);
 
   const navItems = [
-    { name: 'About', to: 'about' },
-    // { name: 'Tech Stack', to: 'tech-stack' },
-    { name: 'Certifications', to: 'certifications' },
-    { name: 'Projects', to: 'projects' },
-    { name: 'Experience', to: 'experience' },
-    // { name: 'Contact', to: 'contact' },
+  { name: 'About', to: 'about', type: 'scroll' },
+  // { name: 'Tech Stack', to: 'tech-stack', type: 'scroll' },
+  // { name: 'Certifications', to: 'certifications', type: 'scroll' },
+  { name: 'Projects', to: 'projects', type: 'scroll' },
+  { name: 'Experience', to: 'experience', type: 'scroll' },
+  // { name: 'Contact', to: 'contact', type: 'scroll' },
+  { name: 'Blog', to: '/blog', type: 'route' },
+  { name: 'Highlights', to: '/highlights', type: 'route' }
   ];
 
   return (
@@ -52,16 +58,44 @@ const Navbar: React.FC<NavbarProps> = ({ theme }) => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-4">
               {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.to}
-                  className="nav-link"
-                  smooth={true}
-                  duration={500}
-                  offset={-70}
-                >
-                  {item.name}
-                </Link>
+                item.type === 'route' ? (
+                  <RouterLink
+                    key={item.name}
+                    to={item.to}
+                    className="nav-link"
+                  >
+                    {item.name}
+                  </RouterLink>
+                ) : (
+                  location.pathname === '/' ? (
+                    <Link
+                      key={item.name}
+                      to={item.to}
+                      className="nav-link"
+                      smooth={true}
+                      duration={500}
+                      offset={-70}
+                    >
+                      {item.name}
+                    </Link>
+                  ) : (
+                    <button
+                      key={item.name}
+                      className="nav-link bg-transparent border-none cursor-pointer"
+                      onClick={() => {
+                        navigate('/');
+                        setTimeout(() => {
+                          const target = document.getElementById(item.to);
+                          if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                          }
+                        }, 100);
+                      }}
+                    >
+                      {item.name}
+                    </button>
+                  )
+                )
               ))}
             </div>
           </div>
@@ -95,17 +129,47 @@ const Navbar: React.FC<NavbarProps> = ({ theme }) => {
           >
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.to}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-base-content hover:text-primary hover:bg-base-200 transition-colors duration-200"
-                  smooth={true}
-                  duration={500}
-                  offset={-70}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
+                item.type === 'route' ? (
+                  <RouterLink
+                    key={item.name}
+                    to={item.to}
+                    className="block px-3 py-2 rounded-md text-base font-medium text-base-content nav-link hover:text-primary hover:bg-base-200 transition-colors duration-200"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </RouterLink>
+                ) : (
+                  location.pathname === '/' ? (
+                    <Link
+                      key={item.name}
+                      to={item.to}
+                      className="block px-3 py-2 rounded-md text-base font-medium text-base-content nav-link hover:text-primary hover:bg-base-200 transition-colors duration-200"
+                      smooth={true}
+                      duration={500}
+                      offset={-70}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ) : (
+                    <button
+                      key={item.name}
+                      className="block px-3 py-2 rounded-md text-base font-medium text-base-content nav-link hover:text-primary hover:bg-base-200 transition-colors duration-200 bg-transparent border-none cursor-pointer"
+                      onClick={() => {
+                        setIsOpen(false);
+                        navigate('/');
+                        setTimeout(() => {
+                          const target = document.getElementById(item.to);
+                          if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                          }
+                        }, 100);
+                      }}
+                    >
+                      {item.name}
+                    </button>
+                  )
+                )
               ))}
             </div>
           </motion.div>
